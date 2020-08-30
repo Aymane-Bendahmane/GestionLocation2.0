@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" layout:decorate="layout.html">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Sign up - Progressus Bootstrap template</title>
+
+	
+</head>
+
+<body>
+	
+<section layout:fragment="pagecontent">
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+			<li class="active">Registration</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Registration</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Register a new account</h3>
+							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signin.html">Login</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
+							<hr>
+
+							<form th:action="@{/register_user}" th:object="${signup_user}" method="post">
+								<div class="top-margin">
+									<label>Nom</label>
+									<input type="text" class="form-control" th:field="*{nom}">
+								</div>
+								<div class="top-margin">
+									<label>Prenom</label>
+									<input type="text" class="form-control" th:field="*{prenom}">
+								</div>
+								<div class="top-margin">
+									<label>Email  <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" th:field="*{email}">
+								</div>
+								<div class="top-margin">
+									<label>Login  <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" th:field="*{login}">
+								</div>
+								<div class=" top-margin">
+									<label>Password <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class=" top-margin">
+								<div class="radio"><!-- Proprietaire Role = 1 -->
+								  	<label><input type="radio" name="optradio" >Proprietaire</label>
+								</div>
+								<div class="radio"><!-- Locataire Role = 2-->
+									  <label><input type="radio" name="optradio" >Locataire</label>
+								</div>
+								</div>
+								<hr>
+
+								<div class="row">
+									
+									<div class="col-md-6">
+										<button class="btn btn-action" type="submit">Register</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+</section>
+	</div>	<!-- /container -->
+	
+
+	
+		
+
+
+
+
+	
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout.html">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+	
+	<title>Sign in - Progressus Bootstrap template</title>
+
+	<link rel="shortcut icon" href="../static/images/gt_favicon.png">
+	
+
+</head>
+
+<section>
+	<!-- Fixed navbar -->
+
+<section layout:fragment="pagecontent">
+	
+	<header id="head" class="secondary"></header>
+
+	<!-- container -->
+	<div class="container">
+
+		<ol class="breadcrumb">
+			<li><a href="index.html">Home</a></li>
+			<li class="active">User access</li>
+		</ol>
+
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-xs-12 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Sign in</h1>
+				</header>
+				
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h3 class="thin text-center">Sign in to your account</h3>
+							<p class="text-center text-muted">si vous n'avez pas de compte veuillez s' <a th:href="@{/signup}">Inscrire</a> affin de benificier de toutes nous services 😉. </p>
+							<hr>
+							<div  class="alert alert-danger" role="alert" th:if="${message} == 'errore' " >
+								<p  >Mot de passe ou le login est incorrect</p>
+							</div>
+							
+							<form th:action="@{/checkuser}" th:object="${user}" method="post">
+								<div class="top-margin">
+									<label>Username/Email <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" th:field="*{login}">
+								</div>
+								<div class="top-margin">
+									<label>Password <span class="text-danger">*</span></label>
+									<input type="password" class="form-control" th:field="*{password}">
+								</div>
+
+								<hr>
+
+								<div class="row">
+									
+									<div class="col-lg-4 text-right">
+										<button class="btn btn-action" type="submit">Sign in</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+				
+			</article>
+			<!-- /Article -->
+
+		</div>
+	</div>	
+	
+
+
+
+</section>
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+
+</body>
+</html>
