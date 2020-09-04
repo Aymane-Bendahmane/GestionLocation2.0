@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>SB Admin 2 - Register</title>
+
+<!-- Custom fonts for this template-->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+<div layout:fragment="pagecontent">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="card shadow-lg border-0 rounded-lg mt-5">
+					<div class="card-header">
+						<h3 class="text-center font-weight-light my-4">Ajouter Client</h3>
+					</div>
+					<div class="card-body">
+						<form  th:action="@{/AjouterUser}" th:object="${user}" method="post">
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Nom</label> 
+											<input class="form-control py-4" id="inputFirstName" th:field="*{nom}"
+											type="text" placeholder="Enter first name"  />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputLastName">Prenom</label> <input class="form-control py-4" id="inputLastName"
+											type="text" placeholder="Enter last name" th:field="*{prenom}" />
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="small mb-1" for="inputEmailAddress">Email</label>
+								<input class="form-control py-4" id="inputEmailAddress"
+									type="email" aria-describedby="emailHelp"
+									placeholder="Enter email address" th:field="*{email}" />
+							</div>
+							
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputEmailAddress">Login</label>
+										<input class="form-control py-4" id="inputEmailAddress"
+											type="text" aria-describedby="emailHelp" placeholder="Login" th:field="*{login}" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputPassword">Password</label>
+										<input class="form-control py-4" id="inputPassword"
+											type="password" placeholder="Enter password" th:field="*{password}" />
+									</div>
+								</div>
+
+							</div>
+							<div class="radio"><!-- Proprietaire Role = 1 -->
+								  	<label><input type="radio" name="optradio" th:field="*{role}"  th:value="Proprietaire">Proprietaire</label>
+								</div>
+								<div class="radio"><!-- Locataire Role = 2-->
+									  <label><input type="radio" name="optradio" th:field="*{role}"  th:value="Locataire">Locataire</label>
+								</div>
+							<div class="form-group mt-4 mb-0">
+								<button class="btn btn-primary btn-block" type="submit">Create
+									Account</button>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+</div>
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

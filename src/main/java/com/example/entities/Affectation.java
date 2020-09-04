@@ -37,8 +37,8 @@ public class Affectation implements Serializable {
 		private Collection<Paiment> paiments;
 		
 		@ManyToOne
-		@JoinColumn(name="id_manager")
-		private Manager manager;
+		@JoinColumn(name="id_user")
+		private User user;
 		
 		
 		

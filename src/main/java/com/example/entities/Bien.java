@@ -39,21 +39,16 @@ public class Bien implements Serializable {
 	private Boolean parking;
 	private String description;
 	private Boolean disponibilite;
+	private String ville;
+	private String quartier ;
 
-	// un bien ajouté par un manager
-	@ManyToOne
-	@JoinColumn(name = "id_manager")
-	private Manager manager;
 
 	// un bien a un type
 	@ManyToOne
 	@JoinColumn(name = "id_type")
 	private Type type;
 
-	// un bien apartient a un quartier
-	@ManyToOne
-	@JoinColumn(name = "id_quartier")
-	private Quartier quartier;
+	
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	private Collection<User> users;

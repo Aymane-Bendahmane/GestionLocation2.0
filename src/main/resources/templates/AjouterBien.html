@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>SB Admin 2 - Register</title>
+
+
+
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+
+<!-- Custom styles for this template-->
+<link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+<div layout:fragment="pagecontent">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="card shadow-lg border-0 rounded-lg mt-5">
+					<div class="card-header">
+						<h3 class="text-center font-weight-light my-4">Ajouter Bien</h3>
+					</div>
+					<div class="card-body">
+						<form  th:action="@{/AjouterUser}" th:object="${bien}" method="post">
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Nombre de Chambre</label> 
+											<input class="form-control py-4" id="inputFirstName" th:field="*{nb_chambre}"
+											type="text" placeholder="Nombre de Chambre"  />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputLastName">Nombre de Etage</label> <input class="form-control py-4" id="inputLastName"
+											type="text" placeholder="Nombre d' Etage" th:field="*{nb_etage}" />
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Nombre de Salon</label> 
+											<input class="form-control py-4"  th:field="*{nb_salon}"
+											type="text" placeholder="Nombre de Salon"  />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputLastName">Surface</label> <input class="form-control py-4" id="inputLastName"
+											type="text" placeholder="Surface" th:field="*{surface}" />
+									</div>
+								</div>
+							</div>
+													<!--Description -->
+							<div class="form-group">
+								<label class="small mb-1" for="inputEmailAddress">Description</label>
+								<textarea class="form-control py-4" 
+									
+									placeholder="Enter Description" th:field="*{description}" ></textarea>
+							</div>
+									<!--date -->
+							<div class="form-group">
+								<label class="small mb-1" for="inputEmailAddress">Date Ajoute</label>
+								<input class="form-control py-4" 
+									type="date"
+									placeholder="Enter Description" th:field="*{date_ajoute}" />
+							</div>
+											<!-- quartier + ville -->
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Ville</label> 
+											<input class="form-control py-4" th:field="*{ville}"
+											type="text"   />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Quartier</label> 
+											<input class="form-control py-4"  th:field="*{quartier}"
+											type="text"   />
+									</div>
+								</div>
+							</div>
+												<!-- balcon + garage -->
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">balcon</label> 
+											<input class="form-control py-4"  th:field="*{balcon}"
+											type="checkbox" th:value="true"  />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Garage</label> 
+											<input class="form-control py-4" th:field="*{garage}"
+											type="checkbox" th:value="true"  />
+									</div>
+								</div>
+							</div>
+													<!-- Parking + Disponibilite -->
+							<div class="form-row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Parking</label> 
+											<input class="form-control py-4" th:field="*{parking}"
+											type="checkbox" th:value="true"  />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="small mb-1" for="inputFirstName">Disponibilite</label> 
+											<input class="form-control py-4"  th:field="*{disponibilite}"
+											type="checkbox" th:value="true"  />
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							<div class="form-group mt-4 mb-0">
+								<button class="btn btn-primary btn-block" type="submit">Create
+									Account</button>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+</div>
+	
+
+</body>
+
+</html>
